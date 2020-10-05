@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h2>Expresiones Regulares</h2>
+    <form class="formularioDatos">
+        <div class="form-group">
+          <label for="usuario">usuario</label>
+          <input type="text" class="form-control" id="usuario">
+        </div>
+        <div class="form-group">
+            <label for="Contrasena">Contrasena</label>
+            <input type="text" class="form-control" id="contra">
+          </div>
+          <div class="form-group">
+            <label for="correo">correo</label>
+            <input type="text" class="form-control" id="correo">
+          </div>
+          <div class="form-group">
+            <label for="telefono">telefono</label>
+            <input type="text" class="form-control" id="telefono">
+          </div>
+          <div class="form-group">
+            <label for="dui">dui</label>
+            <input type="text" class="form-control" id="dui">
+          </div>
+          <div class="form-group">
+            <label for="nit">nit</label>
+            <input type="text" class="form-control" id="nit">
+          </div>
+          <div class="form-group">
+            <label for="web">web</label>
+            <input type="text" class="form-control" id="web">
+          </div>
+          
+        <button type="reset" name="btn" id="add" onclick="AlmacenarDatos();" class="btn btn-success">Agregar Datos</button>
+    </form>
+
+    <input class="form-control col-md-3 light-table-filter" data-table="order-table" id="buscador" type="text" placeholder="Search..">
+
+    <table class="table table-bordered order-table" id="tabla">
+        <thead class="thead-inverse thead-dark">
+            <tr>
+                <th>Usuaurio</th>
+                <th>Clave</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Dui</th>
+                <th>Nit</th>
+                <th>Web</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script type="text/javascript">
+        (function(document) {
+          'use strict';
+    
+          var LightTableFilter = (function(Arr) {
+    
+            var _input;
+    
+            function _onInputEvent(e) {
+              _input = e.target;
+              var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+              Arr.forEach.call(tables, function(table) {
+                Arr.forEach.call(table.tBodies, function(tbody) {
+                  Arr.forEach.call(tbody.rows, _filter);
+                });
+              });
+            }
+    
+            function _filter(row) {
+              var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+              row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+            }
+    
+            return {
+              init: function() {
+                var inputs = document.getElementsByClassName('light-table-filter');
+                Arr.forEach.call(inputs, function(input) {
+                  input.oninput = _onInputEvent;
+                });
+              }
+            };
+          })(Array.prototype);
+    
+          document.addEventListener('readystatechange', function() {
+            if (document.readyState === 'complete') {
+              LightTableFilter.init();
+            }
+          });
+    
+        })(document);
+        </script>
+
+</body>
+<script src="js/js.js"></script>
+</html>

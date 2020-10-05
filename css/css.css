@@ -1,0 +1,21 @@
+
+.formularioDatos{
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+h2{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+#buscador{
+    margin-bottom: 1%;
+    margin-left: 55%;
+}
+#tabla{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
